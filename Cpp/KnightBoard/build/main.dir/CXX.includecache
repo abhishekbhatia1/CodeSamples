@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/KnightBoard.h
+bits/stdc++.h
+-
+
+/home/abhishekb/Documents/CruiseAutomation/src/KnightBoard.cpp
+KnightBoard.h
+/home/abhishekb/Documents/CruiseAutomation/src/KnightBoard.h
+
+/home/abhishekb/Documents/CruiseAutomation/src/main.cpp
+KnightBoard.h
+/home/abhishekb/Documents/CruiseAutomation/src/KnightBoard.h
+

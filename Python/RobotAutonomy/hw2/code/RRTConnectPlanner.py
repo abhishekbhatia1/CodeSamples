@@ -1,0 +1,162 @@
+import numpy, operator
+import copy
+import random
+from RRTPlanner import RRTTree
+
+class RRTConnectPlanner(object):
+
+    def __init__(self, planning_env, visualize):
+        self.planning_env = planning_env
+        self.visualize = visualize
+        
+
+    def Plan(self, start_config, goal_config, epsilon = 0.5):
+        
+        self.gsp = 0.2
+        self.plot = 1
+        ftree = RRTTree(self.planning_env, start_config)
+        rtree = RRTTree(self.planning_env, goal_config)
+        plan = []
+        plan_f = []
+        plan_r = []
+        if self.visualize and hasattr(self.planning_env, 'InitializePlot'):
+            self.planning_env.InitializePlot(goal_config)
+        if (numpy.array_equal(self.planning_env.Extend(start_config,goal_config), goal_config)):
+            plan.append(start_config)
+            plan.append(goal_config)
+            if self.plot:
+                self.planning_env.PlotEdge(start_config, goal_config)
+        else:
+            s_config = copy.copy(start_config)
+            g_config = copy.copy(goal_config)
+            while(1):
+                conf_f = self.planning_env.GenerateRandomConfiguration()
+                conf_r = self.planning_env.GenerateRandomConfiguration()
+                conf_r = conf_f
+                near_id_f, near_vert_f = ftree.GetNearestVertex(conf_f)
+                near_id_r, near_vert_r = rtree.GetNearestVertex(conf_r)
+                new_config_f = self.planning_env.Extend(near_vert_f,conf_f)
+                new_config_r = self.planning_env.Extend(near_vert_r,conf_r)
+                if (new_config_f != None):
+                    new_vert_id_f = ftree.AddVertex(new_config_f)
+                    ftree.AddEdge(near_id_f, new_vert_id_f)                    
+                    if self.plot:                    
+                        self.planning_env.PlotEdge(near_vert_f, new_config_f)
+                    s_config = copy.copy(new_config_f)
+                if (new_config_r != None):
+                    if (numpy.array_equal(new_config_r, goal_config)):
+                        continue
+                    else:
+                        new_vert_id_r = rtree.AddVertex(new_config_r)
+                        rtree.AddEdge(near_id_r, new_vert_id_r)                    
+                        if self.plot:
+                            self.planning_env.PlotEdge(near_vert_r, new_config_r, 1)
+                        g_config = copy.copy(new_config_r)
+                if (random.random() < self.gsp):
+                    if (numpy.array_equal(self.planning_env.Extend(s_config,g_config), g_config)):
+                        print "Optimization"
+                        break
+                if (self.planning_env.ComputeDistance(s_config,g_config) < epsilon):
+                        break
+            if self.plot:
+                self.planning_env.PlotEdge(s_config, g_config, 2)
+            plan_f.append(new_config_f)
+            next_vert_id_f = copy.copy(new_vert_id_f)
+            while(1):
+                next_vert_id_f = ftree.edges[new_vert_id_f]
+                print "next_vert_f"
+                print ftree.vertices[next_vert_id_f]
+                plan_f.append(ftree.vertices[next_vert_id_f])
+                new_vert_id_f = next_vert_id_f
+                if (new_vert_id_f == 0):
+                    break
+            plan_r.append(new_config_r)
+            next_vert_id_r = copy.copy(new_vert_id_r)
+            while(1):
+                next_vert_id_r = rtree.edges[new_vert_id_r]
+                print "next_vert_r"
+                print rtree.vertices[next_vert_id_r]
+                plan_r.append(rtree.vertices[next_vert_id_r])
+                new_vert_id_r = next_vert_id_r
+                if (new_vert_id_r == 0):
+                    break
+            plan_f.reverse()
+            print plan_f
+            print plan_r
+            for i in plan_r:
+                plan_f.append(i)
+            plan = plan_f
+        
+        old_vertex = plan[0]
+        for i in range(1,len(plan)):
+            new_vertex = plan[i]
+            if self.plot:
+                self.planning_env.PlotEdge(old_vertex, new_vertex,3)
+            old_vertex = new_vertex
+        
+        print "Final Plan"
+        print plan
+
+        print "Number of Vertices"
+        print len(rtree.vertices)+len(ftree.vertices)
+
+        return plan
+        
+        '''        
+        ftree = RRTTree(self.planning_env, start_config)
+        rtree = RRTTree(self.planning_env, goal_config)
+        plan = []
+        plan_f = []
+        plan_r = []
+        if self.visualize and hasattr(self.planning_env, 'InitializePlot'):
+            self.planning_env.InitializePlot(goal_config)
+        if (numpy.array_equal(self.planning_env.Extend(start_config,goal_config), goal_config)):
+            plan.append(start_config)
+            plan.append(goal_config)
+            self.planning_env.PlotEdge(start_config, goal_config)
+            #print goal_config
+        else:
+            plan_f.append(start_config)
+            plan_r.append(goal_config)
+            while(numpy.logical_and(start_config[0] != goal_config[0], start_config[1] != goal_config[1])):
+                conf_f = []
+                dist_f = []
+                conf_r = []
+                dist_r = []
+                for i in range(0,10):
+                    conf_f.append(self.planning_env.GenerateRandomConfiguration())
+                    dist_f.append(self.planning_env.ComputeDistance(start_config, conf_f[i]))
+                    conf_r.append(self.planning_env.GenerateRandomConfiguration())
+                    dist_r.append(self.planning_env.ComputeDistance(goal_config, conf_r[i]))
+                ind_min_f = numpy.argmin(dist_f)
+                ind_min_r = numpy.argmin(dist_r)
+                #print ind_min_f, ind_min_r
+                new_config_f = self.planning_env.Extend(start_config,conf_f[ind_min_f])
+                new_config_r = self.planning_env.Extend(goal_config,conf_r[ind_min_r])
+                if (new_config_f != None):
+                    self.planning_env.PlotEdge(start_config, new_config_f)
+                    start_config = copy.copy(new_config_f)
+                    #print start_config
+                    plan_f.append(start_config)
+                if (new_config_r != None):
+                    self.planning_env.PlotEdge(goal_config, new_config_r)
+                    goal_config = copy.copy(new_config_r)
+                    #print goal_config
+                    plan_r.append(goal_config)
+                if (numpy.array_equal(self.planning_env.Extend(start_config,goal_config), goal_config)):
+                    self.planning_env.PlotEdge(start_config, goal_config)
+                    print "Plan from Start Config"                    
+                    print plan_f
+                    print "Plan from Goal Config"
+                    print plan_r
+                    #for i in range(len(plan_r)-1,0):
+                    for i in reversed(plan_r):
+                        plan_f.append(i)
+                        #print plan_f
+                    plan = plan_f                    
+                    break
+            
+        print "Final Plan"
+        print plan
+        return plan
+        '''

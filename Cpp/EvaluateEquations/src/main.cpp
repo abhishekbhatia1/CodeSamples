@@ -1,0 +1,52 @@
+//**************************************************************
+//  main.cpp
+//
+//  Created by Abhishek Bhatia.
+//
+//  This is the main source file.
+//**************************************************************
+
+#include "TCC.h"
+
+int main(int argc, char** argv)
+{
+    char* input;
+    
+    //read input filename from command line
+    if ( (argc <= 1) || (argv[argc-1] == NULL) ) {
+        cout << "No argument provided. Usage: ./main InputFile" << endl;
+        return 0;
+    }
+    else {
+        input = argv[argc-1];
+    }
+    
+    //create an object of the TCC class
+    TCC solution;
+
+    freopen(input, "r", stdin);
+    //freopen("output.txt", "w", stdout);
+    string str;
+    while (getline(cin, str))
+    {
+        //parse input string and store all the relevant information
+        solution.parse(str);
+    }
+
+    //apply dfs on all unvisited nodes
+    for (int i = 0;i < solution.mp.size(); i++)
+    { 
+        if (solution.values.count(i) != 1)
+        {
+            solution.rec(i);
+        }
+    }
+
+    //print the answer in sorted fashion
+    for (map<string, long long int>::iterator it = solution.mp.begin(); it!= solution.mp.end(); it++)
+    { 
+        cout << it->first << " = " << solution.values[it->second] << "\n";
+    }
+
+    return 0;
+}

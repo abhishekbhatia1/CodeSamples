@@ -1,0 +1,537 @@
+//*****************************************************************
+//  KnightBoard.cpp
+//  Cruise Technical Challenge
+//
+//  Created by Abhishek Bhatia.
+//
+//  This source file contains the KnightBoard class method definitions.
+//*****************************************************************
+
+#include "KnightBoard.h"
+
+int KnightBoard::myint(string str) {
+    stringstream ss(str);
+    long long int num;
+    ss >> num;
+    return num;
+}
+
+pair<int, int> KnightBoard::pair_from_string(string str) {
+    string s1 = "", s2 = "";
+    int i;
+    for (i = 0; i < str.size(); i++) { 
+        if(str[i] == ' ') break;
+        s1 += str[i];
+    }
+    i = i + 1;
+    while (i < str.size()) {
+        s2 += str[i];
+        i++;
+    }
+    pair<int, int> loc;
+    loc.first = myint(s1);
+    loc.second = myint(s2);
+    return loc;
+}
+
+void KnightBoard::parse_row(string str, int row) {
+    pair<int, int> loc;
+    loc.first = row;
+    for (int i = 0; i < str.size(); i++) {
+        loc.second = i/2;
+        if (str[i] == ' ') continue;
+        switch(str[i]) {
+            case '.':
+                break;
+            case 'W':
+                interest_coords[loc] = 3;
+                interest_coords_initial[loc] = 3;
+                break;
+            case 'R':
+                interest_coords[loc] = 4;
+                interest_coords_initial[loc] = 4;
+                break;
+            case 'B':
+                interest_coords[loc] = 5;
+                interest_coords_initial[loc] = 5;
+                break;
+            case 'T':
+                interest_coords[loc] = 6;
+                interest_coords_initial[loc] = 6;
+                break;
+            case 'L':
+                interest_coords[loc] = 7;
+                interest_coords_initial[loc] = 7;
+                break;
+        }
+    }
+    return;
+}
+
+void KnightBoard::parse(char* input) {
+    freopen(input, "r", stdin);
+    string str;
+
+    for (int i = 0; i < 3; i++) {
+        getline(cin, str);
+        if (i == 0) {
+            board_size = pair_from_string(str);
+        } else if (i == 1) {
+            start = pair_from_string(str);
+            current = start;
+            interest_coords[start] = 1;
+            interest_coords_initial[start] = 1;
+        } else {
+            goal = pair_from_string(str);
+            interest_coords[goal] = 2;
+            interest_coords_initial[goal] = 2;
+        }
+    }
+
+    getline(cin, str);
+    int num_moves = myint(str);
+
+    for (int i = 0; i < num_moves; i++) {
+        getline(cin, str);
+        pair<int, int> loc = pair_from_string(str);
+        move_seqs.push_back(loc);
+    }
+
+    getline(cin, str);
+    int board_modifications = myint(str);
+    if (board_modifications) {
+        for (int i = 0; i < board_size.first; i++) {
+            getline(cin, str);
+            parse_row(str, i);
+        }
+    }
+
+    board_state = vector<string>(board_size.first);
+
+    interest_coords_cost[0] = 1;
+    interest_coords_cost[1] = 0; // Start/Knight current location
+    interest_coords_cost[2] = 1; // End
+    interest_coords_cost[3] = 2; // Water
+    interest_coords_cost[4] = 999999; // Rock
+    interest_coords_cost[5] = 999999; // Barrier
+    interest_coords_cost[6] = 999999; // Teleport
+    interest_coords_cost[7] = 5; // Lava 
+    return;
+}
+
+void KnightBoard::print_state(int init) {
+    for (int i = 0; i < board_size.first; i++) {
+        string row = "";
+        for (int j = 0; j < board_size.second; j++) {
+            pair<int, int> coord;
+            coord.first = i;
+            coord.second = j;
+            if (interest_coords[coord] > 0) {
+                switch (interest_coords[coord]) {
+                    case 1:
+                        if (init == 0)
+                            row += "S ";
+                        else
+                            row += "K ";
+                        break;
+                    case 2:
+                        row += "E ";
+                        break;
+                    case 3:
+                        row += "W ";
+                        break;
+                    case 4:
+                        row += "R ";
+                        break;
+                    case 5:
+                        row += "B ";
+                        break;
+                    case 6:
+                        row += "T ";
+                        break;
+                    case 7:
+                        row += "L ";
+                        break;
+                }
+            } else
+                row += ". ";
+        }
+        board_state[i] = row;
+    }
+    for (int i = 0; i < board_state.size(); i++)
+        cout << board_state[i] << endl;
+    cout << endl;
+    return;
+}
+
+bool KnightBoard::no_barrier(pair<int, int> current, pair<int, int> next) {
+    int del_x = current.first - next.first;
+    int del_y = current.second - next.second;
+    pair<int, int> loc1, loc2, loc3, loc4;
+    if (abs(del_x) == 2) {
+        int sig_x = del_x > 0 ? -1 : 1;
+        int sig_y = del_y > 0 ? -1 : 1;
+        loc1.first = current.first + sig_x;
+        loc1.second = current.second;
+        loc2.first = current.first + 2*sig_x;
+        loc2.second = current.second;
+        loc3.first = current.first;
+        loc3.second = current.second + sig_y;
+        loc4.first = current.first + sig_x;
+        loc4.second = current.second + sig_y;
+        if ((interest_coords[loc1] == 5 || interest_coords[loc2] == 5) && (interest_coords[loc3] == 5 || interest_coords[loc4] == 5))
+            return false;
+    } else {
+        int sig_x = del_x > 0 ? -1 : 1;
+        int sig_y = del_y > 0 ? -1 : 1;
+        loc1.first = current.first;
+        loc1.second = current.second + sig_y;
+        loc2.first = current.first;
+        loc2.second = current.second + 2*sig_y;
+        loc3.first = current.first + sig_x;
+        loc3.second = current.second;
+        loc4.first = current.first + sig_x;
+        loc4.second = current.second + sig_y;
+        if ((interest_coords[loc1] == 5 || interest_coords[loc2] == 5) && (interest_coords[loc3] == 5 || interest_coords[loc4] == 5))
+            return false;
+    }
+    return true;
+}
+
+bool KnightBoard::validMove(pair<int, int> current, pair<int, int> ms) {
+    int del_x = current.first - ms.first;
+    int del_y = current.second - ms.second;
+    if (DEBUG) cout << "Next Coordinate: (" << ms.first << ", " << ms.second << ")\n";
+    if ((del_x == 1 && del_y == 2 || del_x == 1 && del_y == -2 || del_x == -1 && del_y == 2 || del_x == -1 && del_y == -2
+        || del_x == 2 && del_y == 1 || del_x == 2 && del_y == -1 || del_x == -2 && del_y == 1 || del_x == -2 && del_y == -1)
+        && interest_coords[ms] != 4 && interest_coords[ms] != 5 && no_barrier(current, ms)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+bool KnightBoard::level1_validMoves(vector<pair<int, int>> ms) {
+    cout << "Total number of moves in the sequence: " << ms.size() << endl;
+    for (int i = 0; i < ms.size(); i++) {
+        bool vm = validMove(current, ms[i]);
+        if (vm) {
+            cout << "Next Coordinate: (" << ms[i].first << ", " << ms[i].second << ")\n";
+            cout << "Valid Move.\n";
+            interest_coords[current] = interest_coords_initial[current] > 1 ? interest_coords_initial[current] : 0;
+            current = ms[i];
+            interest_coords[current] = 1;
+            print_state(1);    
+        } else {
+            interest_coords[current] = interest_coords_initial[current] > 1 ? interest_coords_initial[current] : 0;
+            current = start;
+            interest_coords[current] = 1;
+            cout << "Next Coordinate: (" << ms[i].first << ", " << ms[i].second << ")\n";
+            cout << "Invalid Move. Function Terminated.\n";
+            cout << endl;
+            return false;    
+        }
+    }
+    return true;
+}
+
+int KnightBoard::heu(pair<int, int> current, pair<int, int> ms) {
+    return abs(current.first - ms.first) + abs(current.second - ms.second);
+}
+
+void KnightBoard::GenerateSuccesors(pair<int, int> loc, int algo) {
+    int del_x, del_y;
+    for (int i = 0; i < 8; i++) {
+        switch (i) {
+            case 0:
+                del_x = 1;
+                del_y = 2;
+                break;
+            case 1:
+                del_x = 1;
+                del_y = -2;
+                break;
+            case 2:
+                del_x = -1;
+                del_y = 2;
+                break;
+            case 3:
+                del_x = -1;
+                del_y = -2;
+                break;
+            case 4:
+                del_x = 2;
+                del_y = 1;
+                break;
+            case 5:
+                del_x = 2;
+                del_y = -1;
+                break;
+            case 6:
+                del_x = -2;
+                del_y = 1;
+                break;
+            case 7:
+                del_x = -2;
+                del_y = -1;
+                break;
+        }
+        pair<int, int> new_loc;
+        new_loc.first = loc.first + del_x;
+        new_loc.second = loc.second + del_y;
+        if ((new_loc.first >= 0 && new_loc.first < board_size.first) && (new_loc.second >= 0 && new_loc.second < board_size.second)) {
+            if (visited.count(new_loc) == 0 && validMove(loc, new_loc)) {
+                if (!algo) {
+                    q_bfs.push(new_loc);
+                    parent[new_loc] = loc;
+                }
+                else {
+                    pair<pair<int, int>, int> node;
+                    node.first = new_loc;
+                    if (algo == 1)
+                        node.second = g_val[loc] + interest_coords_cost[interest_coords[new_loc]] + 0;
+                    else
+                        node.second = g_val[loc] + interest_coords_cost[interest_coords[new_loc]] + heu(new_loc, goal);
+                    if (g_val.count(new_loc) == 0) {
+                        q_astar.push(node);
+                        parent[new_loc] = loc;
+                        g_val[new_loc] = g_val[loc] + interest_coords_cost[interest_coords[new_loc]];
+                    } else {
+                        if (node.second < g_val[new_loc]) {
+                            q_astar.push(node);
+                            parent[new_loc] = loc;
+                            g_val[new_loc] = g_val[loc] + interest_coords_cost[interest_coords[new_loc]];
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return;
+}
+
+void KnightBoard::level2_computeValidMoves() {
+    q_bfs.push(start);
+    int flag = 0;
+
+    while(!q_bfs.empty()) {
+        current = q_bfs.front(); q_bfs.pop();
+        if (DEBUG) cout << "Current: " << current.first << ", " << current.second << endl;
+        visited.insert(current);
+        if (current.first == goal.first && current.second == goal.second) {
+            cout << "Goal Found\n";
+            flag = 1;
+            break;
+        }
+        GenerateSuccesors(current, 0);
+    }
+    if (flag == 0)
+        cout << "Goal Not Found\n";
+    if (flag) {
+        final_path.push(current);
+        while (current != start) {
+            current = parent[current];
+            if (current != start)
+                final_path.push(current);
+        }
+    }
+    vector<pair<int, int>> ms;
+    while(!final_path.empty()) {
+        pair<int, int> loc = final_path.top(); final_path.pop();
+        ms.push_back(loc);
+    }
+    level1_validMoves(ms);
+    return;
+}
+
+void KnightBoard::level3_computeValidFewestMoves() {
+    pair<pair<int, int>, int> node;
+    node.first = start;
+    node.second = interest_coords_cost[interest_coords[start]] + 0;
+    g_val[start] = interest_coords_cost[interest_coords[start]];
+    q_astar.push(node);
+    int flag = 0;
+
+    while(!q_astar.empty()) {
+        node = q_astar.top(); q_astar.pop();
+        current = node.first;
+        if (DEBUG) cout << "Current: " << current.first << ", " << current.second << endl;
+        visited.insert(current);
+        if (current.first == goal.first && current.second == goal.second) {
+            cout << "Goal Found\n";
+            flag = 1;
+            break;
+        }
+        GenerateSuccesors(current, 1);
+    }
+    if (flag == 0)
+        cout << "Goal Not Found\n";
+    if (flag) {
+        final_path.push(current);
+        while (current != start) {
+            current = parent[current];
+            if (current != start)
+                final_path.push(current);
+        }
+    }
+    vector<pair<int, int>> ms;
+    while(!final_path.empty()) {
+        pair<int, int> loc = final_path.top(); final_path.pop();
+        ms.push_back(loc);
+    }
+    level1_validMoves(ms);
+    return;
+}
+
+void KnightBoard::level4_computeValidFewestMoves() {
+    pair<pair<int, int>, int> node;
+    node.first = start;
+    node.second = interest_coords_cost[interest_coords[start]] + heu(start, goal);
+    g_val[start] = interest_coords_cost[interest_coords[start]];
+    q_astar.push(node);
+    int flag = 0;
+
+    while(!q_astar.empty()) {
+        node = q_astar.top(); q_astar.pop();
+        current = node.first;
+        if (DEBUG) cout << "Current: " << current.first << ", " << current.second << endl;
+        visited.insert(current);
+        if (current.first == goal.first && current.second == goal.second) {
+            cout << "Goal Found\n";
+            flag = 1;
+            break;
+        }
+        GenerateSuccesors(current, 2);
+    }
+    if (flag == 0)
+        cout << "Goal Not Found\n";
+    if (flag) {
+        final_path.push(current);
+        while (current != start) {
+            current = parent[current];
+            if (current != start)
+                final_path.push(current);
+        }
+    }
+    vector<pair<int, int>> ms;
+    while(!final_path.empty()) {
+        pair<int, int> loc = final_path.top(); final_path.pop();
+        ms.push_back(loc);
+    }
+    level1_validMoves(ms);
+    return;
+}
+
+void KnightBoard2::GenerateSuccesors(pair<int, int> loc, int algo) {
+    int del_x, del_y;
+    for (int i = 0; i < 8; i++) {
+        switch (i) {
+            case 0:
+                del_x = 1;
+                del_y = 2;
+                break;
+            case 1:
+                del_x = 1;
+                del_y = -2;
+                break;
+            case 2:
+                del_x = -1;
+                del_y = 2;
+                break;
+            case 3:
+                del_x = -1;
+                del_y = -2;
+                break;
+            case 4:
+                del_x = 2;
+                del_y = 1;
+                break;
+            case 5:
+                del_x = 2;
+                del_y = -1;
+                break;
+            case 6:
+                del_x = -2;
+                del_y = 1;
+                break;
+            case 7:
+                del_x = -2;
+                del_y = -1;
+                break;
+        }
+        pair<int, int> new_loc;
+        new_loc.first = loc.first + del_x;
+        new_loc.second = loc.second + del_y;
+        if ((new_loc.first >= 0 && new_loc.first < board_size.first) && (new_loc.second >= 0 && new_loc.second < board_size.second)) {
+            if (visited.count(new_loc) == 0 && validMove(loc, new_loc)) {
+                if (!algo) {
+                    q_bfs.push(new_loc);
+                    parent[new_loc] = loc;
+                }
+                else {
+                    pair<pair<int, int>, int> node;
+                    node.first = new_loc;
+                    if (algo == 1)
+                        node.second = g_val[loc] + interest_coords_cost[interest_coords[new_loc]] + 0;
+                    else
+                        node.second = g_val[loc] + interest_coords_cost[interest_coords[new_loc]] + heu(new_loc, goal);
+                    if (g_val.count(new_loc) == 0) {
+                        q_astar.push(node);
+                        parent[new_loc] = loc;
+                        g_val[new_loc] = g_val[loc] + interest_coords_cost[interest_coords[new_loc]];
+                    } else {
+                        if (node.second < g_val[new_loc]) {
+                            q_astar.push(node);
+                            parent[new_loc] = loc;
+                            g_val[new_loc] = g_val[loc] + interest_coords_cost[interest_coords[new_loc]];
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return;
+}
+
+void KnightBoard2::level5_computeLongestSequence() {
+    pair<pair<int, int>, int> node;
+    node.first = start;
+    node.second = interest_coords_cost[interest_coords[start]] + heu(start, goal);
+    g_val[start] = interest_coords_cost[interest_coords[start]];
+    q_astar.push(node);
+    int flag = 0;
+
+    while(!q_astar.empty()) {
+        node = q_astar.top(); q_astar.pop();
+        current = node.first;
+        if (DEBUG) cout << "Current: " << current.first << ", " << current.second << endl;
+        visited.insert(current);
+        if (current.first == goal.first && current.second == goal.second) {
+            cout << "Goal Found\n";
+            flag = 1;
+            break;
+        }
+        GenerateSuccesors(current, 2);
+    }
+    if (flag == 0)
+        cout << "Goal Not Found\n";
+    if (flag) {
+        final_path.push(current);
+        while (current != start) {
+            current = parent[current];
+            if (current != start)
+                final_path.push(current);
+        }
+    }
+    vector<pair<int, int>> ms;
+    while(!final_path.empty()) {
+        pair<int, int> loc = final_path.top(); final_path.pop();
+        ms.push_back(loc);
+    }
+    level1_validMoves(ms);
+    return;
+}
+
+//*****************************************************************
+// End of File
+//*****************************************************************

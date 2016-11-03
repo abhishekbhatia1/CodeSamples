@@ -1,0 +1,14 @@
+offset = 4 + random + 1
+location = 1 + origin + offset
+origin =3                   + 5
+input1 = origin + random
+input2=3+5
+input3 = input2 + input1
+random = 2
+input4 = origin + random + input1
+input5=3+5        +1
+input6 = input2 + input4
+input7 = origin + random + input5
+input8=3+5+2
+input9 = input7 + input1
+d      =        3+      4

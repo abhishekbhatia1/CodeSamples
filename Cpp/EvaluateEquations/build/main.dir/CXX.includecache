@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/TCC.h
+iostream
+-
+sstream
+-
+string
+-
+map
+-
+vector
+-
+
+/home/abhishekb/Documents/Tesla_Coding_Challenge_9_4/Tesla_Coding_Challenge/src/TCC.cpp
+TCC.h
+/home/abhishekb/Documents/Tesla_Coding_Challenge_9_4/Tesla_Coding_Challenge/src/TCC.h
+
+/home/abhishekb/Documents/Tesla_Coding_Challenge_9_4/Tesla_Coding_Challenge/src/main.cpp
+TCC.h
+/home/abhishekb/Documents/Tesla_Coding_Challenge_9_4/Tesla_Coding_Challenge/src/TCC.h
+

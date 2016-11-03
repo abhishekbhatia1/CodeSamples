@@ -1,0 +1,10 @@
+Planner: Non Optimal, but computationally faster.
+Goal Found
+Robot location: (0, 0) and Target location: (3, 3)
+Robot location: (0, 1) and Target location: (2, 3)
+Robot location: (1, 1) and Target location: (1, 3)
+Robot location: (1, 2) and Target location: (1, 3)
+Robot location: (1, 2) and Target location: (1, 2)
+Execution Time: 0.125 msecs
+Number of nodes expanded: 4
+Cost of the path: 7

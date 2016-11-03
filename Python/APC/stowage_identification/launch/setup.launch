@@ -1,0 +1,20 @@
+<launch>
+
+    <machine name="harp-slave" address="harp-slave" default="true"/>
+    <machine name="harp-master" address="harp-master" />
+	<rosparam command="load" file="$(find stowage_identification)/config/item_dictionary.yaml"/>
+    <include file="$(find kinect2_bridge)/launch/kinect2_bridge_v5.launch"/>
+
+    <!-- Preprocess image -->
+    <node pkg="stowage_identification" type="preprocess_id_image" name="preprocess_id_image"/>
+    
+    <!-- pose Estimation -->
+    
+    <!-- CNN -->
+    <node pkg="stowage_identification" type="stowage_identification.py" name="stowage_identification"/>
+    
+    <!-- Predictions -->
+
+    <!--
+    <node pkg="stowage_identification" type="stowage_perception_server.py" name="stowage_perception_server"/> -->
+</launch>

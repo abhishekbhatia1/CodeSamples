@@ -1,0 +1,3106 @@
+Initialize
+Inside BFS
+2.5
+2.5
+Neighbor: 1 and 1
+Parent: 2 and 2
+Neighbor: 1 and 2
+Parent: 2 and 2
+Neighbor: 1 and 3
+Parent: 2 and 2
+Neighbor: 2 and 1
+Parent: 2 and 2
+Neighbor: 2 and 3
+Parent: 2 and 2
+Neighbor: 3 and 1
+Parent: 2 and 2
+Neighbor: 3 and 2
+Parent: 2 and 2
+Neighbor: 3 and 3
+Parent: 2 and 2
+1
+1
+1
+2
+1
+3
+Neighbor: 1 and 4
+Parent: 1 and 3
+Neighbor: 2 and 4
+Parent: 1 and 3
+2
+1
+2
+3
+Neighbor: 3 and 4
+Parent: 2 and 3
+3
+1
+Neighbor: 4 and 1
+Parent: 3 and 1
+Neighbor: 4 and 2
+Parent: 3 and 1
+3
+2
+Neighbor: 4 and 3
+Parent: 3 and 2
+3
+3
+Neighbor: 4 and 4
+Parent: 3 and 3
+1
+4
+Neighbor: 1 and 5
+Parent: 1 and 4
+Neighbor: 2 and 5
+Parent: 1 and 4
+2
+4
+Neighbor: 3 and 5
+Parent: 2 and 4
+3
+4
+Neighbor: 4 and 5
+Parent: 3 and 4
+4
+1
+Neighbor: 5 and 1
+Parent: 4 and 1
+Neighbor: 5 and 2
+Parent: 4 and 1
+4
+2
+Neighbor: 5 and 3
+Parent: 4 and 2
+4
+3
+Neighbor: 5 and 4
+Parent: 4 and 3
+4
+4
+Neighbor: 5 and 5
+Parent: 4 and 4
+1
+5
+Neighbor: 1 and 6
+Parent: 1 and 5
+Neighbor: 2 and 6
+Parent: 1 and 5
+2
+5
+Neighbor: 3 and 6
+Parent: 2 and 5
+3
+5
+Neighbor: 4 and 6
+Parent: 3 and 5
+4
+5
+Neighbor: 5 and 6
+Parent: 4 and 5
+5
+1
+Neighbor: 6 and 1
+Parent: 5 and 1
+Neighbor: 6 and 2
+Parent: 5 and 1
+5
+2
+Neighbor: 6 and 3
+Parent: 5 and 2
+5
+3
+Neighbor: 6 and 4
+Parent: 5 and 3
+5
+4
+Neighbor: 6 and 5
+Parent: 5 and 4
+5
+5
+Neighbor: 6 and 6
+Parent: 5 and 5
+1
+6
+Neighbor: 1 and 7
+Parent: 1 and 6
+Neighbor: 2 and 7
+Parent: 1 and 6
+2
+6
+Neighbor: 3 and 7
+Parent: 2 and 6
+3
+6
+Neighbor: 4 and 7
+Parent: 3 and 6
+4
+6
+Neighbor: 5 and 7
+Parent: 4 and 6
+5
+6
+Neighbor: 6 and 7
+Parent: 5 and 6
+6
+1
+Neighbor: 7 and 1
+Parent: 6 and 1
+Neighbor: 7 and 2
+Parent: 6 and 1
+6
+2
+Neighbor: 7 and 3
+Parent: 6 and 2
+6
+3
+Neighbor: 7 and 4
+Parent: 6 and 3
+6
+4
+Neighbor: 7 and 5
+Parent: 6 and 4
+6
+5
+Neighbor: 7 and 6
+Parent: 6 and 5
+6
+6
+1
+7
+Neighbor: 1 and 8
+Parent: 1 and 7
+Neighbor: 2 and 8
+Parent: 1 and 7
+2
+7
+Neighbor: 3 and 8
+Parent: 2 and 7
+3
+7
+Neighbor: 4 and 8
+Parent: 3 and 7
+4
+7
+Neighbor: 5 and 8
+Parent: 4 and 7
+5
+7
+Neighbor: 6 and 8
+Parent: 5 and 7
+6
+7
+7
+1
+Neighbor: 8 and 1
+Parent: 7 and 1
+Neighbor: 8 and 2
+Parent: 7 and 1
+7
+2
+Neighbor: 8 and 3
+Parent: 7 and 2
+7
+3
+Neighbor: 8 and 4
+Parent: 7 and 3
+7
+4
+Neighbor: 8 and 5
+Parent: 7 and 4
+7
+5
+Neighbor: 8 and 6
+Parent: 7 and 5
+7
+6
+1
+8
+Neighbor: 1 and 9
+Parent: 1 and 8
+Neighbor: 2 and 9
+Parent: 1 and 8
+2
+8
+Neighbor: 3 and 9
+Parent: 2 and 8
+3
+8
+Neighbor: 4 and 9
+Parent: 3 and 8
+4
+8
+Neighbor: 5 and 9
+Parent: 4 and 8
+5
+8
+Neighbor: 6 and 9
+Parent: 5 and 8
+6
+8
+8
+1
+Neighbor: 9 and 1
+Parent: 8 and 1
+Neighbor: 9 and 2
+Parent: 8 and 1
+8
+2
+Neighbor: 9 and 3
+Parent: 8 and 2
+8
+3
+Neighbor: 9 and 4
+Parent: 8 and 3
+8
+4
+Neighbor: 9 and 5
+Parent: 8 and 4
+8
+5
+Neighbor: 9 and 6
+Parent: 8 and 5
+8
+6
+1
+9
+Neighbor: 1 and 10
+Parent: 1 and 9
+Neighbor: 2 and 10
+Parent: 1 and 9
+2
+9
+Neighbor: 3 and 10
+Parent: 2 and 9
+3
+9
+Neighbor: 4 and 10
+Parent: 3 and 9
+4
+9
+Neighbor: 5 and 10
+Parent: 4 and 9
+5
+9
+Neighbor: 6 and 10
+Parent: 5 and 9
+6
+9
+Neighbor: 7 and 10
+Parent: 6 and 9
+9
+1
+Neighbor: 10 and 1
+Parent: 9 and 1
+Neighbor: 10 and 2
+Parent: 9 and 1
+9
+2
+Neighbor: 10 and 3
+Parent: 9 and 2
+9
+3
+Neighbor: 10 and 4
+Parent: 9 and 3
+9
+4
+Neighbor: 10 and 5
+Parent: 9 and 4
+9
+5
+Neighbor: 10 and 6
+Parent: 9 and 5
+9
+6
+Neighbor: 10 and 7
+Parent: 9 and 6
+ 1
+10
+Neighbor: 1 and 11
+Parent: 1 and 10
+Neighbor: 2 and 11
+Parent: 1 and 10
+ 2
+10
+Neighbor: 3 and 11
+Parent: 2 and 10
+ 3
+10
+Neighbor: 4 and 11
+Parent: 3 and 10
+ 4
+10
+Neighbor: 5 and 11
+Parent: 4 and 10
+ 5
+10
+Neighbor: 6 and 11
+Parent: 5 and 10
+ 6
+10
+Neighbor: 7 and 11
+Parent: 6 and 10
+ 7
+10
+Neighbor: 8 and 10
+Parent: 7 and 10
+Neighbor: 8 and 11
+Parent: 7 and 10
+10
+ 1
+Neighbor: 11 and 1
+Parent: 10 and 1
+Neighbor: 11 and 2
+Parent: 10 and 1
+10
+ 2
+Neighbor: 11 and 3
+Parent: 10 and 2
+10
+ 3
+Neighbor: 11 and 4
+Parent: 10 and 3
+10
+ 4
+Neighbor: 11 and 5
+Parent: 10 and 4
+10
+ 5
+Neighbor: 11 and 6
+Parent: 10 and 5
+10
+ 6
+Neighbor: 11 and 7
+Parent: 10 and 6
+10
+ 7
+Neighbor: 10 and 8
+Parent: 10 and 7
+Neighbor: 11 and 8
+Parent: 10 and 7
+ 1
+11
+Neighbor: 1 and 12
+Parent: 1 and 11
+Neighbor: 2 and 12
+Parent: 1 and 11
+ 2
+11
+Neighbor: 3 and 12
+Parent: 2 and 11
+ 3
+11
+Neighbor: 4 and 12
+Parent: 3 and 11
+ 4
+11
+Neighbor: 5 and 12
+Parent: 4 and 11
+ 5
+11
+Neighbor: 6 and 12
+Parent: 5 and 11
+ 6
+11
+Neighbor: 7 and 12
+Parent: 6 and 11
+ 7
+11
+Neighbor: 8 and 12
+Parent: 7 and 11
+ 8
+10
+Neighbor: 9 and 10
+Parent: 8 and 10
+Neighbor: 9 and 11
+Parent: 8 and 10
+ 8
+11
+Neighbor: 9 and 12
+Parent: 8 and 11
+11
+ 1
+Neighbor: 12 and 1
+Parent: 11 and 1
+Neighbor: 12 and 2
+Parent: 11 and 1
+11
+ 2
+Neighbor: 12 and 3
+Parent: 11 and 2
+11
+ 3
+Neighbor: 12 and 4
+Parent: 11 and 3
+11
+ 4
+Neighbor: 12 and 5
+Parent: 11 and 4
+11
+ 5
+Neighbor: 12 and 6
+Parent: 11 and 5
+11
+ 6
+Neighbor: 12 and 7
+Parent: 11 and 6
+11
+ 7
+Neighbor: 12 and 8
+Parent: 11 and 7
+10
+ 8
+Neighbor: 10 and 9
+Parent: 10 and 8
+Neighbor: 11 and 9
+Parent: 10 and 8
+11
+ 8
+Neighbor: 12 and 9
+Parent: 11 and 8
+ 1
+12
+Neighbor: 1 and 13
+Parent: 1 and 12
+Neighbor: 2 and 13
+Parent: 1 and 12
+ 2
+12
+Neighbor: 3 and 13
+Parent: 2 and 12
+ 3
+12
+Neighbor: 4 and 13
+Parent: 3 and 12
+ 4
+12
+Neighbor: 5 and 13
+Parent: 4 and 12
+ 5
+12
+Neighbor: 6 and 13
+Parent: 5 and 12
+ 6
+12
+Neighbor: 7 and 13
+Parent: 6 and 12
+ 7
+12
+Neighbor: 8 and 13
+Parent: 7 and 12
+ 8
+12
+Neighbor: 9 and 13
+Parent: 8 and 12
+ 9
+10
+Neighbor: 10 and 10
+Parent: 9 and 10
+Neighbor: 10 and 11
+Parent: 9 and 10
+ 9
+11
+Neighbor: 10 and 12
+Parent: 9 and 11
+ 9
+12
+Neighbor: 10 and 13
+Parent: 9 and 12
+12
+ 1
+Neighbor: 13 and 1
+Parent: 12 and 1
+Neighbor: 13 and 2
+Parent: 12 and 1
+12
+ 2
+Neighbor: 13 and 3
+Parent: 12 and 2
+12
+ 3
+Neighbor: 13 and 4
+Parent: 12 and 3
+12
+ 4
+Neighbor: 13 and 5
+Parent: 12 and 4
+12
+ 5
+Neighbor: 13 and 6
+Parent: 12 and 5
+12
+ 6
+Neighbor: 13 and 7
+Parent: 12 and 6
+12
+ 7
+Neighbor: 13 and 8
+Parent: 12 and 7
+12
+ 8
+Neighbor: 13 and 9
+Parent: 12 and 8
+10
+ 9
+Neighbor: 11 and 10
+Parent: 10 and 9
+11
+ 9
+Neighbor: 12 and 10
+Parent: 11 and 9
+12
+ 9
+Neighbor: 13 and 10
+Parent: 12 and 9
+ 1
+13
+Neighbor: 1 and 14
+Parent: 1 and 13
+Neighbor: 2 and 14
+Parent: 1 and 13
+ 2
+13
+Neighbor: 3 and 14
+Parent: 2 and 13
+ 3
+13
+Neighbor: 4 and 14
+Parent: 3 and 13
+ 4
+13
+Neighbor: 5 and 14
+Parent: 4 and 13
+ 5
+13
+Neighbor: 6 and 14
+Parent: 5 and 13
+ 6
+13
+Neighbor: 7 and 14
+Parent: 6 and 13
+ 7
+13
+Neighbor: 8 and 14
+Parent: 7 and 13
+ 8
+13
+Neighbor: 9 and 14
+Parent: 8 and 13
+ 9
+13
+Neighbor: 10 and 14
+Parent: 9 and 13
+10
+10
+Neighbor: 11 and 11
+Parent: 10 and 10
+10
+11
+Neighbor: 11 and 12
+Parent: 10 and 11
+10
+12
+Neighbor: 11 and 13
+Parent: 10 and 12
+10
+13
+Neighbor: 11 and 14
+Parent: 10 and 13
+13
+ 1
+Neighbor: 14 and 1
+Parent: 13 and 1
+Neighbor: 14 and 2
+Parent: 13 and 1
+13
+ 2
+Neighbor: 14 and 3
+Parent: 13 and 2
+13
+ 3
+Neighbor: 14 and 4
+Parent: 13 and 3
+13
+ 4
+Neighbor: 14 and 5
+Parent: 13 and 4
+13
+ 5
+Neighbor: 14 and 6
+Parent: 13 and 5
+13
+ 6
+Neighbor: 14 and 7
+Parent: 13 and 6
+13
+ 7
+Neighbor: 14 and 8
+Parent: 13 and 7
+13
+ 8
+Neighbor: 14 and 9
+Parent: 13 and 8
+13
+ 9
+Neighbor: 14 and 10
+Parent: 13 and 9
+11
+10
+Neighbor: 12 and 11
+Parent: 11 and 10
+12
+10
+Neighbor: 13 and 11
+Parent: 12 and 10
+13
+10
+Neighbor: 14 and 11
+Parent: 13 and 10
+ 1
+14
+Neighbor: 1 and 15
+Parent: 1 and 14
+Neighbor: 2 and 15
+Parent: 1 and 14
+ 2
+14
+Neighbor: 3 and 15
+Parent: 2 and 14
+ 3
+14
+Neighbor: 4 and 15
+Parent: 3 and 14
+ 4
+14
+Neighbor: 5 and 15
+Parent: 4 and 14
+ 5
+14
+Neighbor: 6 and 15
+Parent: 5 and 14
+ 6
+14
+Neighbor: 7 and 15
+Parent: 6 and 14
+ 7
+14
+Neighbor: 8 and 15
+Parent: 7 and 14
+ 8
+14
+Neighbor: 9 and 15
+Parent: 8 and 14
+ 9
+14
+Neighbor: 10 and 15
+Parent: 9 and 14
+10
+14
+Neighbor: 11 and 15
+Parent: 10 and 14
+11
+11
+Neighbor: 12 and 12
+Parent: 11 and 11
+11
+12
+Neighbor: 12 and 13
+Parent: 11 and 12
+11
+13
+Neighbor: 12 and 14
+Parent: 11 and 13
+11
+14
+Neighbor: 12 and 15
+Parent: 11 and 14
+14
+ 1
+Neighbor: 15 and 1
+Parent: 14 and 1
+Neighbor: 15 and 2
+Parent: 14 and 1
+14
+ 2
+Neighbor: 15 and 3
+Parent: 14 and 2
+14
+ 3
+Neighbor: 15 and 4
+Parent: 14 and 3
+14
+ 4
+Neighbor: 15 and 5
+Parent: 14 and 4
+14
+ 5
+Neighbor: 15 and 6
+Parent: 14 and 5
+14
+ 6
+Neighbor: 15 and 7
+Parent: 14 and 6
+14
+ 7
+Neighbor: 15 and 8
+Parent: 14 and 7
+14
+ 8
+Neighbor: 15 and 9
+Parent: 14 and 8
+14
+ 9
+Neighbor: 15 and 10
+Parent: 14 and 9
+14
+10
+Neighbor: 15 and 11
+Parent: 14 and 10
+12
+11
+Neighbor: 13 and 12
+Parent: 12 and 11
+13
+11
+Neighbor: 14 and 12
+Parent: 13 and 11
+14
+11
+Neighbor: 15 and 12
+Parent: 14 and 11
+ 1
+15
+Neighbor: 1 and 16
+Parent: 1 and 15
+Neighbor: 2 and 16
+Parent: 1 and 15
+ 2
+15
+Neighbor: 3 and 16
+Parent: 2 and 15
+ 3
+15
+Neighbor: 4 and 16
+Parent: 3 and 15
+ 4
+15
+Neighbor: 5 and 16
+Parent: 4 and 15
+ 5
+15
+Neighbor: 6 and 16
+Parent: 5 and 15
+ 6
+15
+Neighbor: 7 and 16
+Parent: 6 and 15
+ 7
+15
+Neighbor: 8 and 16
+Parent: 7 and 15
+ 8
+15
+Neighbor: 9 and 16
+Parent: 8 and 15
+ 9
+15
+Neighbor: 10 and 16
+Parent: 9 and 15
+10
+15
+Neighbor: 11 and 16
+Parent: 10 and 15
+11
+15
+Neighbor: 12 and 16
+Parent: 11 and 15
+12
+12
+Neighbor: 13 and 13
+Parent: 12 and 12
+12
+13
+Neighbor: 13 and 14
+Parent: 12 and 13
+12
+14
+Neighbor: 13 and 15
+Parent: 12 and 14
+12
+15
+Neighbor: 13 and 16
+Parent: 12 and 15
+15
+ 1
+Neighbor: 16 and 1
+Parent: 15 and 1
+Neighbor: 16 and 2
+Parent: 15 and 1
+15
+ 2
+Neighbor: 16 and 3
+Parent: 15 and 2
+15
+ 3
+Neighbor: 16 and 4
+Parent: 15 and 3
+15
+ 4
+Neighbor: 16 and 5
+Parent: 15 and 4
+15
+ 5
+Neighbor: 16 and 6
+Parent: 15 and 5
+15
+ 6
+Neighbor: 16 and 7
+Parent: 15 and 6
+15
+ 7
+Neighbor: 16 and 8
+Parent: 15 and 7
+15
+ 8
+Neighbor: 16 and 9
+Parent: 15 and 8
+15
+ 9
+Neighbor: 16 and 10
+Parent: 15 and 9
+15
+10
+Neighbor: 16 and 11
+Parent: 15 and 10
+15
+11
+Neighbor: 16 and 12
+Parent: 15 and 11
+13
+12
+Neighbor: 14 and 13
+Parent: 13 and 12
+14
+12
+Neighbor: 15 and 13
+Parent: 14 and 12
+15
+12
+Neighbor: 16 and 13
+Parent: 15 and 12
+ 1
+16
+Neighbor: 1 and 17
+Parent: 1 and 16
+Neighbor: 2 and 17
+Parent: 1 and 16
+ 2
+16
+Neighbor: 3 and 17
+Parent: 2 and 16
+ 3
+16
+Neighbor: 4 and 17
+Parent: 3 and 16
+ 4
+16
+Neighbor: 5 and 17
+Parent: 4 and 16
+ 5
+16
+Neighbor: 6 and 17
+Parent: 5 and 16
+ 6
+16
+Neighbor: 7 and 17
+Parent: 6 and 16
+ 7
+16
+Neighbor: 8 and 17
+Parent: 7 and 16
+ 8
+16
+Neighbor: 9 and 17
+Parent: 8 and 16
+ 9
+16
+Neighbor: 10 and 17
+Parent: 9 and 16
+10
+16
+Neighbor: 11 and 17
+Parent: 10 and 16
+11
+16
+Neighbor: 12 and 17
+Parent: 11 and 16
+12
+16
+Neighbor: 13 and 17
+Parent: 12 and 16
+13
+13
+Neighbor: 14 and 14
+Parent: 13 and 13
+13
+14
+Neighbor: 14 and 15
+Parent: 13 and 14
+13
+15
+Neighbor: 14 and 16
+Parent: 13 and 15
+13
+16
+Neighbor: 14 and 17
+Parent: 13 and 16
+16
+ 1
+Neighbor: 17 and 1
+Parent: 16 and 1
+Neighbor: 17 and 2
+Parent: 16 and 1
+16
+ 2
+Neighbor: 17 and 3
+Parent: 16 and 2
+16
+ 3
+Neighbor: 17 and 4
+Parent: 16 and 3
+16
+ 4
+Neighbor: 17 and 5
+Parent: 16 and 4
+16
+ 5
+Neighbor: 17 and 6
+Parent: 16 and 5
+16
+ 6
+Neighbor: 17 and 7
+Parent: 16 and 6
+16
+ 7
+Neighbor: 17 and 8
+Parent: 16 and 7
+16
+ 8
+Neighbor: 17 and 9
+Parent: 16 and 8
+16
+ 9
+Neighbor: 17 and 10
+Parent: 16 and 9
+16
+10
+Neighbor: 17 and 11
+Parent: 16 and 10
+16
+11
+Neighbor: 17 and 12
+Parent: 16 and 11
+16
+12
+Neighbor: 17 and 13
+Parent: 16 and 12
+14
+13
+Neighbor: 15 and 14
+Parent: 14 and 13
+15
+13
+Neighbor: 16 and 14
+Parent: 15 and 13
+16
+13
+Neighbor: 17 and 14
+Parent: 16 and 13
+ 1
+17
+Neighbor: 1 and 18
+Parent: 1 and 17
+Neighbor: 2 and 18
+Parent: 1 and 17
+ 2
+17
+Neighbor: 3 and 18
+Parent: 2 and 17
+ 3
+17
+Neighbor: 4 and 18
+Parent: 3 and 17
+ 4
+17
+Neighbor: 5 and 18
+Parent: 4 and 17
+ 5
+17
+Neighbor: 6 and 18
+Parent: 5 and 17
+ 6
+17
+Neighbor: 7 and 18
+Parent: 6 and 17
+ 7
+17
+Neighbor: 8 and 18
+Parent: 7 and 17
+ 8
+17
+Neighbor: 9 and 18
+Parent: 8 and 17
+ 9
+17
+Neighbor: 10 and 18
+Parent: 9 and 17
+10
+17
+Neighbor: 11 and 18
+Parent: 10 and 17
+11
+17
+Neighbor: 12 and 18
+Parent: 11 and 17
+12
+17
+Neighbor: 13 and 18
+Parent: 12 and 17
+13
+17
+Neighbor: 14 and 18
+Parent: 13 and 17
+14
+14
+Neighbor: 15 and 15
+Parent: 14 and 14
+14
+15
+Neighbor: 15 and 16
+Parent: 14 and 15
+14
+16
+Neighbor: 15 and 17
+Parent: 14 and 16
+14
+17
+Neighbor: 15 and 18
+Parent: 14 and 17
+17
+ 1
+Neighbor: 18 and 1
+Parent: 17 and 1
+Neighbor: 18 and 2
+Parent: 17 and 1
+17
+ 2
+Neighbor: 18 and 3
+Parent: 17 and 2
+17
+ 3
+Neighbor: 18 and 4
+Parent: 17 and 3
+17
+ 4
+Neighbor: 18 and 5
+Parent: 17 and 4
+17
+ 5
+Neighbor: 18 and 6
+Parent: 17 and 5
+17
+ 6
+Neighbor: 18 and 7
+Parent: 17 and 6
+17
+ 7
+Neighbor: 18 and 8
+Parent: 17 and 7
+17
+ 8
+Neighbor: 18 and 9
+Parent: 17 and 8
+17
+ 9
+Neighbor: 18 and 10
+Parent: 17 and 9
+17
+10
+Neighbor: 18 and 11
+Parent: 17 and 10
+17
+11
+Neighbor: 18 and 12
+Parent: 17 and 11
+17
+12
+Neighbor: 18 and 13
+Parent: 17 and 12
+17
+13
+Neighbor: 18 and 14
+Parent: 17 and 13
+15
+14
+Neighbor: 16 and 15
+Parent: 15 and 14
+16
+14
+Neighbor: 17 and 15
+Parent: 16 and 14
+17
+14
+Neighbor: 18 and 15
+Parent: 17 and 14
+ 1
+18
+Neighbor: 1 and 19
+Parent: 1 and 18
+Neighbor: 2 and 19
+Parent: 1 and 18
+ 2
+18
+Neighbor: 3 and 19
+Parent: 2 and 18
+ 3
+18
+Neighbor: 4 and 19
+Parent: 3 and 18
+ 4
+18
+Neighbor: 5 and 19
+Parent: 4 and 18
+ 5
+18
+Neighbor: 6 and 19
+Parent: 5 and 18
+ 6
+18
+Neighbor: 7 and 19
+Parent: 6 and 18
+ 7
+18
+Neighbor: 8 and 19
+Parent: 7 and 18
+ 8
+18
+Neighbor: 9 and 19
+Parent: 8 and 18
+ 9
+18
+Neighbor: 10 and 19
+Parent: 9 and 18
+10
+18
+Neighbor: 11 and 19
+Parent: 10 and 18
+11
+18
+Neighbor: 12 and 19
+Parent: 11 and 18
+12
+18
+Neighbor: 13 and 19
+Parent: 12 and 18
+13
+18
+Neighbor: 14 and 19
+Parent: 13 and 18
+14
+18
+Neighbor: 15 and 19
+Parent: 14 and 18
+15
+15
+Neighbor: 16 and 16
+Parent: 15 and 15
+15
+16
+Neighbor: 16 and 17
+Parent: 15 and 16
+15
+17
+Neighbor: 16 and 18
+Parent: 15 and 17
+15
+18
+Neighbor: 16 and 19
+Parent: 15 and 18
+18
+ 1
+Neighbor: 19 and 1
+Parent: 18 and 1
+Neighbor: 19 and 2
+Parent: 18 and 1
+18
+ 2
+Neighbor: 19 and 3
+Parent: 18 and 2
+18
+ 3
+Neighbor: 19 and 4
+Parent: 18 and 3
+18
+ 4
+Neighbor: 19 and 5
+Parent: 18 and 4
+18
+ 5
+Neighbor: 19 and 6
+Parent: 18 and 5
+18
+ 6
+Neighbor: 19 and 7
+Parent: 18 and 6
+18
+ 7
+Neighbor: 19 and 8
+Parent: 18 and 7
+18
+ 8
+Neighbor: 19 and 9
+Parent: 18 and 8
+18
+ 9
+Neighbor: 19 and 10
+Parent: 18 and 9
+18
+10
+Neighbor: 19 and 11
+Parent: 18 and 10
+18
+11
+Neighbor: 19 and 12
+Parent: 18 and 11
+18
+12
+Neighbor: 19 and 13
+Parent: 18 and 12
+18
+13
+Neighbor: 19 and 14
+Parent: 18 and 13
+18
+14
+Neighbor: 19 and 15
+Parent: 18 and 14
+16
+15
+Neighbor: 17 and 16
+Parent: 16 and 15
+17
+15
+Neighbor: 18 and 16
+Parent: 17 and 15
+18
+15
+Neighbor: 19 and 16
+Parent: 18 and 15
+ 1
+19
+Neighbor: 1 and 20
+Parent: 1 and 19
+Neighbor: 2 and 20
+Parent: 1 and 19
+ 2
+19
+Neighbor: 3 and 20
+Parent: 2 and 19
+ 3
+19
+Neighbor: 4 and 20
+Parent: 3 and 19
+ 4
+19
+Neighbor: 5 and 20
+Parent: 4 and 19
+ 5
+19
+Neighbor: 6 and 20
+Parent: 5 and 19
+ 6
+19
+Neighbor: 7 and 20
+Parent: 6 and 19
+ 7
+19
+Neighbor: 8 and 20
+Parent: 7 and 19
+ 8
+19
+Neighbor: 9 and 20
+Parent: 8 and 19
+ 9
+19
+Neighbor: 10 and 20
+Parent: 9 and 19
+10
+19
+Neighbor: 11 and 20
+Parent: 10 and 19
+11
+19
+Neighbor: 12 and 20
+Parent: 11 and 19
+12
+19
+Neighbor: 13 and 20
+Parent: 12 and 19
+13
+19
+Neighbor: 14 and 20
+Parent: 13 and 19
+14
+19
+Neighbor: 15 and 20
+Parent: 14 and 19
+15
+19
+Neighbor: 16 and 20
+Parent: 15 and 19
+16
+16
+Neighbor: 17 and 17
+Parent: 16 and 16
+16
+17
+Neighbor: 17 and 18
+Parent: 16 and 17
+16
+18
+Neighbor: 17 and 19
+Parent: 16 and 18
+16
+19
+Neighbor: 17 and 20
+Parent: 16 and 19
+19
+ 1
+Neighbor: 20 and 1
+Parent: 19 and 1
+Neighbor: 20 and 2
+Parent: 19 and 1
+19
+ 2
+Neighbor: 20 and 3
+Parent: 19 and 2
+19
+ 3
+Neighbor: 20 and 4
+Parent: 19 and 3
+19
+ 4
+Neighbor: 20 and 5
+Parent: 19 and 4
+19
+ 5
+Neighbor: 20 and 6
+Parent: 19 and 5
+19
+ 6
+Neighbor: 20 and 7
+Parent: 19 and 6
+19
+ 7
+Neighbor: 20 and 8
+Parent: 19 and 7
+19
+ 8
+Neighbor: 20 and 9
+Parent: 19 and 8
+19
+ 9
+Neighbor: 20 and 10
+Parent: 19 and 9
+19
+10
+Neighbor: 20 and 11
+Parent: 19 and 10
+19
+11
+Neighbor: 20 and 12
+Parent: 19 and 11
+19
+12
+Neighbor: 20 and 13
+Parent: 19 and 12
+19
+13
+Neighbor: 20 and 14
+Parent: 19 and 13
+19
+14
+Neighbor: 20 and 15
+Parent: 19 and 14
+19
+15
+Neighbor: 20 and 16
+Parent: 19 and 15
+17
+16
+Neighbor: 18 and 17
+Parent: 17 and 16
+18
+16
+Neighbor: 19 and 17
+Parent: 18 and 16
+19
+16
+Neighbor: 20 and 17
+Parent: 19 and 16
+ 1
+20
+Neighbor: 1 and 21
+Parent: 1 and 20
+Neighbor: 2 and 21
+Parent: 1 and 20
+ 2
+20
+Neighbor: 3 and 21
+Parent: 2 and 20
+ 3
+20
+Neighbor: 4 and 21
+Parent: 3 and 20
+ 4
+20
+Neighbor: 5 and 21
+Parent: 4 and 20
+ 5
+20
+Neighbor: 6 and 21
+Parent: 5 and 20
+ 6
+20
+Neighbor: 7 and 21
+Parent: 6 and 20
+ 7
+20
+Neighbor: 8 and 21
+Parent: 7 and 20
+ 8
+20
+Neighbor: 9 and 21
+Parent: 8 and 20
+ 9
+20
+Neighbor: 10 and 21
+Parent: 9 and 20
+10
+20
+Neighbor: 11 and 21
+Parent: 10 and 20
+11
+20
+Neighbor: 12 and 21
+Parent: 11 and 20
+12
+20
+Neighbor: 13 and 21
+Parent: 12 and 20
+13
+20
+Neighbor: 14 and 21
+Parent: 13 and 20
+14
+20
+Neighbor: 15 and 21
+Parent: 14 and 20
+15
+20
+Neighbor: 16 and 21
+Parent: 15 and 20
+16
+20
+Neighbor: 17 and 21
+Parent: 16 and 20
+17
+17
+Neighbor: 18 and 18
+Parent: 17 and 17
+17
+18
+Neighbor: 18 and 19
+Parent: 17 and 18
+17
+19
+Neighbor: 18 and 20
+Parent: 17 and 19
+17
+20
+Neighbor: 18 and 21
+Parent: 17 and 20
+20
+ 1
+Neighbor: 21 and 1
+Parent: 20 and 1
+Neighbor: 21 and 2
+Parent: 20 and 1
+20
+ 2
+Neighbor: 21 and 3
+Parent: 20 and 2
+20
+ 3
+Neighbor: 21 and 4
+Parent: 20 and 3
+20
+ 4
+Neighbor: 21 and 5
+Parent: 20 and 4
+20
+ 5
+Neighbor: 21 and 6
+Parent: 20 and 5
+20
+ 6
+Neighbor: 21 and 7
+Parent: 20 and 6
+20
+ 7
+Neighbor: 21 and 8
+Parent: 20 and 7
+20
+ 8
+Neighbor: 21 and 9
+Parent: 20 and 8
+20
+ 9
+Neighbor: 21 and 10
+Parent: 20 and 9
+20
+10
+Neighbor: 21 and 11
+Parent: 20 and 10
+20
+11
+Neighbor: 21 and 12
+Parent: 20 and 11
+20
+12
+Neighbor: 21 and 13
+Parent: 20 and 12
+20
+13
+Neighbor: 21 and 14
+Parent: 20 and 13
+20
+14
+Neighbor: 21 and 15
+Parent: 20 and 14
+20
+15
+Neighbor: 21 and 16
+Parent: 20 and 15
+20
+16
+Neighbor: 21 and 17
+Parent: 20 and 16
+18
+17
+Neighbor: 19 and 18
+Parent: 18 and 17
+19
+17
+Neighbor: 20 and 18
+Parent: 19 and 17
+20
+17
+Neighbor: 21 and 18
+Parent: 20 and 17
+ 1
+21
+Neighbor: 1 and 22
+Parent: 1 and 21
+Neighbor: 2 and 22
+Parent: 1 and 21
+ 2
+21
+Neighbor: 3 and 22
+Parent: 2 and 21
+ 3
+21
+Neighbor: 4 and 22
+Parent: 3 and 21
+ 4
+21
+Neighbor: 5 and 22
+Parent: 4 and 21
+ 5
+21
+Neighbor: 6 and 22
+Parent: 5 and 21
+ 6
+21
+Neighbor: 7 and 22
+Parent: 6 and 21
+ 7
+21
+Neighbor: 8 and 22
+Parent: 7 and 21
+ 8
+21
+Neighbor: 9 and 22
+Parent: 8 and 21
+ 9
+21
+Neighbor: 10 and 22
+Parent: 9 and 21
+10
+21
+Neighbor: 11 and 22
+Parent: 10 and 21
+11
+21
+Neighbor: 12 and 22
+Parent: 11 and 21
+12
+21
+Neighbor: 13 and 22
+Parent: 12 and 21
+13
+21
+Neighbor: 14 and 22
+Parent: 13 and 21
+14
+21
+Neighbor: 15 and 22
+Parent: 14 and 21
+15
+21
+Neighbor: 16 and 22
+Parent: 15 and 21
+16
+21
+Neighbor: 17 and 22
+Parent: 16 and 21
+17
+21
+Neighbor: 18 and 22
+Parent: 17 and 21
+18
+18
+Neighbor: 19 and 19
+Parent: 18 and 18
+18
+19
+Neighbor: 19 and 20
+Parent: 18 and 19
+18
+20
+Neighbor: 19 and 21
+Parent: 18 and 20
+18
+21
+Neighbor: 19 and 22
+Parent: 18 and 21
+21
+ 1
+Neighbor: 22 and 1
+Parent: 21 and 1
+Neighbor: 22 and 2
+Parent: 21 and 1
+21
+ 2
+Neighbor: 22 and 3
+Parent: 21 and 2
+21
+ 3
+Neighbor: 22 and 4
+Parent: 21 and 3
+21
+ 4
+Neighbor: 22 and 5
+Parent: 21 and 4
+21
+ 5
+Neighbor: 22 and 6
+Parent: 21 and 5
+21
+ 6
+Neighbor: 22 and 7
+Parent: 21 and 6
+21
+ 7
+Neighbor: 22 and 8
+Parent: 21 and 7
+21
+ 8
+Neighbor: 22 and 9
+Parent: 21 and 8
+21
+ 9
+Neighbor: 22 and 10
+Parent: 21 and 9
+21
+10
+Neighbor: 22 and 11
+Parent: 21 and 10
+21
+11
+Neighbor: 22 and 12
+Parent: 21 and 11
+21
+12
+Neighbor: 22 and 13
+Parent: 21 and 12
+21
+13
+Neighbor: 22 and 14
+Parent: 21 and 13
+21
+14
+Neighbor: 22 and 15
+Parent: 21 and 14
+21
+15
+Neighbor: 22 and 16
+Parent: 21 and 15
+21
+16
+Neighbor: 22 and 17
+Parent: 21 and 16
+21
+17
+Neighbor: 22 and 18
+Parent: 21 and 17
+19
+18
+Neighbor: 20 and 19
+Parent: 19 and 18
+20
+18
+Neighbor: 21 and 19
+Parent: 20 and 18
+21
+18
+Neighbor: 22 and 19
+Parent: 21 and 18
+ 1
+22
+Neighbor: 1 and 23
+Parent: 1 and 22
+Neighbor: 2 and 23
+Parent: 1 and 22
+ 2
+22
+Neighbor: 3 and 23
+Parent: 2 and 22
+ 3
+22
+Neighbor: 4 and 23
+Parent: 3 and 22
+ 4
+22
+Neighbor: 5 and 23
+Parent: 4 and 22
+ 5
+22
+Neighbor: 6 and 23
+Parent: 5 and 22
+ 6
+22
+Neighbor: 7 and 23
+Parent: 6 and 22
+ 7
+22
+Neighbor: 8 and 23
+Parent: 7 and 22
+ 8
+22
+Neighbor: 9 and 23
+Parent: 8 and 22
+ 9
+22
+Neighbor: 10 and 23
+Parent: 9 and 22
+10
+22
+Neighbor: 11 and 23
+Parent: 10 and 22
+11
+22
+Neighbor: 12 and 23
+Parent: 11 and 22
+12
+22
+Neighbor: 13 and 23
+Parent: 12 and 22
+13
+22
+Neighbor: 14 and 23
+Parent: 13 and 22
+14
+22
+Neighbor: 15 and 23
+Parent: 14 and 22
+15
+22
+Neighbor: 16 and 23
+Parent: 15 and 22
+16
+22
+Neighbor: 17 and 23
+Parent: 16 and 22
+17
+22
+Neighbor: 18 and 23
+Parent: 17 and 22
+18
+22
+Neighbor: 19 and 23
+Parent: 18 and 22
+19
+19
+Neighbor: 20 and 20
+Parent: 19 and 19
+19
+20
+Neighbor: 20 and 21
+Parent: 19 and 20
+19
+21
+Neighbor: 20 and 22
+Parent: 19 and 21
+19
+22
+Neighbor: 20 and 23
+Parent: 19 and 22
+22
+ 1
+Neighbor: 23 and 1
+Parent: 22 and 1
+Neighbor: 23 and 2
+Parent: 22 and 1
+22
+ 2
+Neighbor: 23 and 3
+Parent: 22 and 2
+22
+ 3
+Neighbor: 23 and 4
+Parent: 22 and 3
+22
+ 4
+Neighbor: 23 and 5
+Parent: 22 and 4
+22
+ 5
+Neighbor: 23 and 6
+Parent: 22 and 5
+22
+ 6
+Neighbor: 23 and 7
+Parent: 22 and 6
+22
+ 7
+Neighbor: 23 and 8
+Parent: 22 and 7
+22
+ 8
+Neighbor: 23 and 9
+Parent: 22 and 8
+22
+ 9
+Neighbor: 23 and 10
+Parent: 22 and 9
+22
+10
+Neighbor: 23 and 11
+Parent: 22 and 10
+22
+11
+Neighbor: 23 and 12
+Parent: 22 and 11
+22
+12
+Neighbor: 23 and 13
+Parent: 22 and 12
+22
+13
+Neighbor: 23 and 14
+Parent: 22 and 13
+22
+14
+Neighbor: 23 and 15
+Parent: 22 and 14
+22
+15
+Neighbor: 23 and 16
+Parent: 22 and 15
+22
+16
+Neighbor: 23 and 17
+Parent: 22 and 16
+22
+17
+Neighbor: 23 and 18
+Parent: 22 and 17
+22
+18
+Neighbor: 23 and 19
+Parent: 22 and 18
+20
+19
+Neighbor: 21 and 20
+Parent: 20 and 19
+21
+19
+Neighbor: 22 and 20
+Parent: 21 and 19
+22
+19
+Neighbor: 23 and 20
+Parent: 22 and 19
+ 1
+23
+Neighbor: 1 and 24
+Parent: 1 and 23
+Neighbor: 2 and 24
+Parent: 1 and 23
+ 2
+23
+Neighbor: 3 and 24
+Parent: 2 and 23
+ 3
+23
+Neighbor: 4 and 24
+Parent: 3 and 23
+ 4
+23
+Neighbor: 5 and 24
+Parent: 4 and 23
+ 5
+23
+Neighbor: 6 and 24
+Parent: 5 and 23
+ 6
+23
+Neighbor: 7 and 24
+Parent: 6 and 23
+ 7
+23
+Neighbor: 8 and 24
+Parent: 7 and 23
+ 8
+23
+Neighbor: 9 and 24
+Parent: 8 and 23
+ 9
+23
+Neighbor: 10 and 24
+Parent: 9 and 23
+10
+23
+Neighbor: 11 and 24
+Parent: 10 and 23
+11
+23
+Neighbor: 12 and 24
+Parent: 11 and 23
+12
+23
+Neighbor: 13 and 24
+Parent: 12 and 23
+13
+23
+14
+23
+15
+23
+16
+23
+17
+23
+Neighbor: 18 and 24
+Parent: 17 and 23
+18
+23
+Neighbor: 19 and 24
+Parent: 18 and 23
+19
+23
+Neighbor: 20 and 24
+Parent: 19 and 23
+20
+20
+Neighbor: 21 and 21
+Parent: 20 and 20
+20
+21
+Neighbor: 21 and 22
+Parent: 20 and 21
+20
+22
+Neighbor: 21 and 23
+Parent: 20 and 22
+20
+23
+Neighbor: 21 and 24
+Parent: 20 and 23
+23
+ 1
+Neighbor: 24 and 1
+Parent: 23 and 1
+Neighbor: 24 and 2
+Parent: 23 and 1
+23
+ 2
+Neighbor: 24 and 3
+Parent: 23 and 2
+23
+ 3
+Neighbor: 24 and 4
+Parent: 23 and 3
+23
+ 4
+Neighbor: 24 and 5
+Parent: 23 and 4
+23
+ 5
+Neighbor: 24 and 6
+Parent: 23 and 5
+23
+ 6
+Neighbor: 24 and 7
+Parent: 23 and 6
+23
+ 7
+Neighbor: 24 and 8
+Parent: 23 and 7
+23
+ 8
+Neighbor: 24 and 9
+Parent: 23 and 8
+23
+ 9
+Neighbor: 24 and 10
+Parent: 23 and 9
+23
+10
+Neighbor: 24 and 11
+Parent: 23 and 10
+23
+11
+Neighbor: 24 and 12
+Parent: 23 and 11
+23
+12
+Neighbor: 24 and 13
+Parent: 23 and 12
+23
+13
+Neighbor: 24 and 14
+Parent: 23 and 13
+23
+14
+Neighbor: 24 and 15
+Parent: 23 and 14
+23
+15
+Neighbor: 24 and 16
+Parent: 23 and 15
+23
+16
+Neighbor: 24 and 17
+Parent: 23 and 16
+23
+17
+Neighbor: 24 and 18
+Parent: 23 and 17
+23
+18
+Neighbor: 24 and 19
+Parent: 23 and 18
+23
+19
+Neighbor: 24 and 20
+Parent: 23 and 19
+21
+20
+Neighbor: 22 and 21
+Parent: 21 and 20
+22
+20
+Neighbor: 23 and 21
+Parent: 22 and 20
+23
+20
+Neighbor: 24 and 21
+Parent: 23 and 20
+ 1
+24
+Neighbor: 1 and 25
+Parent: 1 and 24
+Neighbor: 2 and 25
+Parent: 1 and 24
+ 2
+24
+Neighbor: 3 and 25
+Parent: 2 and 24
+ 3
+24
+Neighbor: 4 and 25
+Parent: 3 and 24
+ 4
+24
+Neighbor: 5 and 25
+Parent: 4 and 24
+ 5
+24
+Neighbor: 6 and 25
+Parent: 5 and 24
+ 6
+24
+Neighbor: 7 and 25
+Parent: 6 and 24
+ 7
+24
+Neighbor: 8 and 25
+Parent: 7 and 24
+ 8
+24
+Neighbor: 9 and 25
+Parent: 8 and 24
+ 9
+24
+Neighbor: 10 and 25
+Parent: 9 and 24
+10
+24
+Neighbor: 11 and 25
+Parent: 10 and 24
+11
+24
+Neighbor: 12 and 25
+Parent: 11 and 24
+12
+24
+Neighbor: 13 and 25
+Parent: 12 and 24
+13
+24
+18
+24
+Neighbor: 18 and 25
+Parent: 18 and 24
+Neighbor: 19 and 25
+Parent: 18 and 24
+19
+24
+Neighbor: 20 and 25
+Parent: 19 and 24
+20
+24
+Neighbor: 21 and 25
+Parent: 20 and 24
+21
+21
+Neighbor: 22 and 22
+Parent: 21 and 21
+21
+22
+Neighbor: 22 and 23
+Parent: 21 and 22
+21
+23
+Neighbor: 22 and 24
+Parent: 21 and 23
+21
+24
+Neighbor: 22 and 25
+Parent: 21 and 24
+24
+ 1
+Neighbor: 25 and 1
+Parent: 24 and 1
+Neighbor: 25 and 2
+Parent: 24 and 1
+24
+ 2
+Neighbor: 25 and 3
+Parent: 24 and 2
+24
+ 3
+Neighbor: 25 and 4
+Parent: 24 and 3
+24
+ 4
+Neighbor: 25 and 5
+Parent: 24 and 4
+24
+ 5
+Neighbor: 25 and 6
+Parent: 24 and 5
+24
+ 6
+Neighbor: 25 and 7
+Parent: 24 and 6
+24
+ 7
+Neighbor: 25 and 8
+Parent: 24 and 7
+24
+ 8
+Neighbor: 25 and 9
+Parent: 24 and 8
+24
+ 9
+Neighbor: 25 and 10
+Parent: 24 and 9
+24
+10
+Neighbor: 25 and 11
+Parent: 24 and 10
+24
+11
+Neighbor: 25 and 12
+Parent: 24 and 11
+24
+12
+Neighbor: 25 and 13
+Parent: 24 and 12
+24
+13
+Neighbor: 25 and 14
+Parent: 24 and 13
+24
+14
+Neighbor: 25 and 15
+Parent: 24 and 14
+24
+15
+Neighbor: 25 and 16
+Parent: 24 and 15
+24
+16
+Neighbor: 25 and 17
+Parent: 24 and 16
+24
+17
+Neighbor: 25 and 18
+Parent: 24 and 17
+24
+18
+Neighbor: 25 and 19
+Parent: 24 and 18
+24
+19
+Neighbor: 25 and 20
+Parent: 24 and 19
+24
+20
+Neighbor: 25 and 21
+Parent: 24 and 20
+22
+21
+Neighbor: 23 and 22
+Parent: 22 and 21
+23
+21
+Neighbor: 24 and 22
+Parent: 23 and 21
+24
+21
+Neighbor: 25 and 22
+Parent: 24 and 21
+ 1
+25
+Neighbor: 1 and 26
+Parent: 1 and 25
+Neighbor: 2 and 26
+Parent: 1 and 25
+ 2
+25
+Neighbor: 3 and 26
+Parent: 2 and 25
+ 3
+25
+Neighbor: 4 and 26
+Parent: 3 and 25
+ 4
+25
+Neighbor: 5 and 26
+Parent: 4 and 25
+ 5
+25
+Neighbor: 6 and 26
+Parent: 5 and 25
+ 6
+25
+Neighbor: 7 and 26
+Parent: 6 and 25
+ 7
+25
+Neighbor: 8 and 26
+Parent: 7 and 25
+ 8
+25
+Neighbor: 9 and 26
+Parent: 8 and 25
+ 9
+25
+Neighbor: 10 and 26
+Parent: 9 and 25
+10
+25
+Neighbor: 11 and 26
+Parent: 10 and 25
+11
+25
+Neighbor: 12 and 26
+Parent: 11 and 25
+12
+25
+Neighbor: 13 and 26
+Parent: 12 and 25
+13
+25
+18
+25
+Neighbor: 18 and 26
+Parent: 18 and 25
+Neighbor: 19 and 26
+Parent: 18 and 25
+19
+25
+Neighbor: 20 and 26
+Parent: 19 and 25
+20
+25
+Neighbor: 21 and 26
+Parent: 20 and 25
+21
+25
+Neighbor: 22 and 26
+Parent: 21 and 25
+22
+22
+Neighbor: 23 and 23
+Parent: 22 and 22
+22
+23
+Neighbor: 23 and 24
+Parent: 22 and 23
+22
+24
+Neighbor: 23 and 25
+Parent: 22 and 24
+22
+25
+Neighbor: 23 and 26
+Parent: 22 and 25
+25
+ 1
+Neighbor: 26 and 1
+Parent: 25 and 1
+Neighbor: 26 and 2
+Parent: 25 and 1
+25
+ 2
+Neighbor: 26 and 3
+Parent: 25 and 2
+25
+ 3
+Neighbor: 26 and 4
+Parent: 25 and 3
+25
+ 4
+Neighbor: 26 and 5
+Parent: 25 and 4
+25
+ 5
+Neighbor: 26 and 6
+Parent: 25 and 5
+25
+ 6
+Neighbor: 26 and 7
+Parent: 25 and 6
+25
+ 7
+Neighbor: 26 and 8
+Parent: 25 and 7
+25
+ 8
+Neighbor: 26 and 9
+Parent: 25 and 8
+25
+ 9
+Neighbor: 26 and 10
+Parent: 25 and 9
+25
+10
+Neighbor: 26 and 11
+Parent: 25 and 10
+25
+11
+Neighbor: 26 and 12
+Parent: 25 and 11
+25
+12
+Neighbor: 26 and 13
+Parent: 25 and 12
+25
+13
+Neighbor: 26 and 14
+Parent: 25 and 13
+25
+14
+Neighbor: 26 and 15
+Parent: 25 and 14
+25
+15
+Neighbor: 26 and 16
+Parent: 25 and 15
+25
+16
+Neighbor: 26 and 17
+Parent: 25 and 16
+25
+17
+Neighbor: 26 and 18
+Parent: 25 and 17
+25
+18
+Neighbor: 26 and 19
+Parent: 25 and 18
+25
+19
+Neighbor: 26 and 20
+Parent: 25 and 19
+25
+20
+Neighbor: 26 and 21
+Parent: 25 and 20
+25
+21
+Neighbor: 26 and 22
+Parent: 25 and 21
+23
+22
+Neighbor: 24 and 23
+Parent: 23 and 22
+24
+22
+Neighbor: 25 and 23
+Parent: 24 and 22
+25
+22
+Neighbor: 26 and 23
+Parent: 25 and 22
+ 1
+26
+Neighbor: 1 and 27
+Parent: 1 and 26
+Neighbor: 2 and 27
+Parent: 1 and 26
+ 2
+26
+Neighbor: 3 and 27
+Parent: 2 and 26
+ 3
+26
+Neighbor: 4 and 27
+Parent: 3 and 26
+ 4
+26
+Neighbor: 5 and 27
+Parent: 4 and 26
+ 5
+26
+Neighbor: 6 and 27
+Parent: 5 and 26
+ 6
+26
+Neighbor: 7 and 27
+Parent: 6 and 26
+ 7
+26
+Neighbor: 8 and 27
+Parent: 7 and 26
+ 8
+26
+Neighbor: 9 and 27
+Parent: 8 and 26
+ 9
+26
+Neighbor: 10 and 27
+Parent: 9 and 26
+10
+26
+Neighbor: 11 and 27
+Parent: 10 and 26
+11
+26
+Neighbor: 12 and 27
+Parent: 11 and 26
+12
+26
+Neighbor: 13 and 27
+Parent: 12 and 26
+13
+26
+Neighbor: 14 and 27
+Parent: 13 and 26
+18
+26
+Neighbor: 17 and 27
+Parent: 18 and 26
+Neighbor: 18 and 27
+Parent: 18 and 26
+Neighbor: 19 and 27
+Parent: 18 and 26
+19
+26
+Neighbor: 20 and 27
+Parent: 19 and 26
+20
+26
+Neighbor: 21 and 27
+Parent: 20 and 26
+21
+26
+Neighbor: 22 and 27
+Parent: 21 and 26
+22
+26
+Neighbor: 23 and 27
+Parent: 22 and 26
+23
+23
+Neighbor: 24 and 24
+Parent: 23 and 23
+23
+24
+Neighbor: 24 and 25
+Parent: 23 and 24
+23
+25
+Neighbor: 24 and 26
+Parent: 23 and 25
+23
+26
+Neighbor: 24 and 27
+Parent: 23 and 26
+26
+ 1
+Neighbor: 27 and 1
+Parent: 26 and 1
+Neighbor: 27 and 2
+Parent: 26 and 1
+26
+ 2
+Neighbor: 27 and 3
+Parent: 26 and 2
+26
+ 3
+Neighbor: 27 and 4
+Parent: 26 and 3
+26
+ 4
+Neighbor: 27 and 5
+Parent: 26 and 4
+26
+ 5
+Neighbor: 27 and 6
+Parent: 26 and 5
+26
+ 6
+Neighbor: 27 and 7
+Parent: 26 and 6
+26
+ 7
+Neighbor: 27 and 8
+Parent: 26 and 7
+26
+ 8
+Neighbor: 27 and 9
+Parent: 26 and 8
+26
+ 9
+Neighbor: 27 and 10
+Parent: 26 and 9
+26
+10
+Neighbor: 27 and 11
+Parent: 26 and 10
+26
+11
+Neighbor: 27 and 12
+Parent: 26 and 11
+26
+12
+Neighbor: 27 and 13
+Parent: 26 and 12
+26
+13
+Neighbor: 27 and 14
+Parent: 26 and 13
+26
+14
+Neighbor: 27 and 15
+Parent: 26 and 14
+26
+15
+Neighbor: 27 and 16
+Parent: 26 and 15
+26
+16
+Neighbor: 27 and 17
+Parent: 26 and 16
+26
+17
+Neighbor: 27 and 18
+Parent: 26 and 17
+26
+18
+Neighbor: 27 and 19
+Parent: 26 and 18
+26
+19
+Neighbor: 27 and 20
+Parent: 26 and 19
+26
+20
+Neighbor: 27 and 21
+Parent: 26 and 20
+26
+21
+Neighbor: 27 and 22
+Parent: 26 and 21
+26
+22
+Neighbor: 27 and 23
+Parent: 26 and 22
+24
+23
+Neighbor: 25 and 24
+Parent: 24 and 23
+25
+23
+Neighbor: 26 and 24
+Parent: 25 and 23
+26
+23
+Neighbor: 27 and 24
+Parent: 26 and 23
+ 1
+27
+Neighbor: 1 and 28
+Parent: 1 and 27
+Neighbor: 2 and 28
+Parent: 1 and 27
+ 2
+27
+Neighbor: 3 and 28
+Parent: 2 and 27
+ 3
+27
+Neighbor: 4 and 28
+Parent: 3 and 27
+ 4
+27
+Neighbor: 5 and 28
+Parent: 4 and 27
+ 5
+27
+Neighbor: 6 and 28
+Parent: 5 and 27
+ 6
+27
+Neighbor: 7 and 28
+Parent: 6 and 27
+ 7
+27
+Neighbor: 8 and 28
+Parent: 7 and 27
+ 8
+27
+Neighbor: 9 and 28
+Parent: 8 and 27
+ 9
+27
+Neighbor: 10 and 28
+Parent: 9 and 27
+10
+27
+Neighbor: 11 and 28
+Parent: 10 and 27
+11
+27
+Neighbor: 12 and 28
+Parent: 11 and 27
+12
+27
+Neighbor: 13 and 28
+Parent: 12 and 27
+13
+27
+Neighbor: 14 and 28
+Parent: 13 and 27
+14
+27
+Neighbor: 15 and 27
+Parent: 14 and 27
+Neighbor: 15 and 28
+Parent: 14 and 27
+17
+27
+Neighbor: 16 and 27
+Parent: 17 and 27
+Neighbor: 16 and 28
+Parent: 17 and 27
+Neighbor: 17 and 28
+Parent: 17 and 27
+Neighbor: 18 and 28
+Parent: 17 and 27
+18
+27
+Neighbor: 19 and 28
+Parent: 18 and 27
+19
+27
+Neighbor: 20 and 28
+Parent: 19 and 27
+20
+27
+Neighbor: 21 and 28
+Parent: 20 and 27
+21
+27
+Neighbor: 22 and 28
+Parent: 21 and 27
+22
+27
+Neighbor: 23 and 28
+Parent: 22 and 27
+23
+27
+Neighbor: 24 and 28
+Parent: 23 and 27
+24
+24
+Neighbor: 25 and 25
+Parent: 24 and 24
+24
+25
+Neighbor: 25 and 26
+Parent: 24 and 25
+24
+26
+Neighbor: 25 and 27
+Parent: 24 and 26
+24
+27
+Neighbor: 25 and 28
+Parent: 24 and 27
+27
+ 1
+Neighbor: 28 and 1
+Parent: 27 and 1
+Neighbor: 28 and 2
+Parent: 27 and 1
+27
+ 2
+Neighbor: 28 and 3
+Parent: 27 and 2
+27
+ 3
+Neighbor: 28 and 4
+Parent: 27 and 3
+27
+ 4
+Neighbor: 28 and 5
+Parent: 27 and 4
+27
+ 5
+Neighbor: 28 and 6
+Parent: 27 and 5
+27
+ 6
+Neighbor: 28 and 7
+Parent: 27 and 6
+27
+ 7
+Neighbor: 28 and 8
+Parent: 27 and 7
+27
+ 8
+Neighbor: 28 and 9
+Parent: 27 and 8
+27
+ 9
+Neighbor: 28 and 10
+Parent: 27 and 9
+27
+10
+Neighbor: 28 and 11
+Parent: 27 and 10
+27
+11
+Neighbor: 28 and 12
+Parent: 27 and 11
+27
+12
+Neighbor: 28 and 13
+Parent: 27 and 12
+27
+13
+Neighbor: 28 and 14
+Parent: 27 and 13
+27
+14
+Neighbor: 28 and 15
+Parent: 27 and 14
+27
+15
+Neighbor: 28 and 16
+Parent: 27 and 15
+27
+16
+Neighbor: 28 and 17
+Parent: 27 and 16
+27
+17
+Neighbor: 28 and 18
+Parent: 27 and 17
+27
+18
+Neighbor: 28 and 19
+Parent: 27 and 18
+27
+19
+Neighbor: 28 and 20
+Parent: 27 and 19
+27
+20
+Neighbor: 28 and 21
+Parent: 27 and 20
+27
+21
+Neighbor: 28 and 22
+Parent: 27 and 21
+27
+22
+Neighbor: 28 and 23
+Parent: 27 and 22
+27
+23
+Neighbor: 28 and 24
+Parent: 27 and 23
+25
+24
+Neighbor: 26 and 25
+Parent: 25 and 24
+26
+24
+Neighbor: 27 and 25
+Parent: 26 and 24
+27
+24
+Neighbor: 28 and 25
+Parent: 27 and 24
+ 1
+28
+ 2
+28
+ 3
+28
+ 4
+28
+ 5
+28
+ 6
+28
+ 7
+28
+ 8
+28
+ 9
+28
+10
+28
+11
+28
+12
+28
+13
+28
+14
+28
+15
+27
+15
+28
+16
+27
+16
+28
+17
+28
+18
+28
+19
+28
+20
+28
+21
+28
+22
+28
+23
+28
+24
+28
+25
+25
+Neighbor: 26 and 26
+Parent: 25 and 25
+25
+26
+Neighbor: 26 and 27
+Parent: 25 and 26
+25
+27
+Neighbor: 26 and 28
+Parent: 25 and 27
+25
+28
+28
+ 1
+28
+ 2
+28
+ 3
+28
+ 4
+28
+ 5
+28
+ 6
+28
+ 7
+28
+ 8
+28
+ 9
+28
+10
+28
+11
+28
+12
+28
+13
+28
+14
+28
+15
+28
+16
+28
+17
+28
+18
+28
+19
+28
+20
+28
+21
+28
+22
+28
+23
+28
+24
+26
+25
+Neighbor: 27 and 26
+Parent: 26 and 25
+27
+25
+Neighbor: 28 and 26
+Parent: 27 and 25
+28
+25
+26
+26
+Neighbor: 27 and 27
+Parent: 26 and 26
+26
+27
+Neighbor: 27 and 28
+Parent: 26 and 27
+26
+28
+27
+26
+Neighbor: 28 and 27
+Parent: 27 and 26
+28
+26
+27
+27
+Yes 
+27 and 27
+26 and 26
+25 and 25
+24 and 24
+23 and 23
+22 and 22
+21 and 21
+20 and 20
+19 and 19
+18 and 18
+17 and 17
+16 and 16
+15 and 15
+14 and 14
+13 and 13
+12 and 12
+11 and 11
+10 and 10
+9 and 10
+8 and 10
+7 and 10
+6 and 9
+5 and 8
+4 and 7
+3 and 6
+2 and 5
+1 and 4
+1 and 3
+NextPositionX: 1 and NextPositionY: 3
+ComputeControl: -5
+-1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 

@@ -1,0 +1,89 @@
+//*****************************************************************
+//  KnightBoard.h
+//  Cruise Technical Challenge
+//
+//  Created by Abhishek Bhatia.
+//
+//  This header file contains the KnightBoard class declaration.
+//*****************************************************************
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define DEBUG 0
+
+//*****************************************************************
+// KnightBoard Class
+//*****************************************************************
+
+// Class utilized by the priority queue to determine which item to pop
+class CompareDist
+{
+public:
+    bool operator()(pair<pair<int, int>,int> n1,pair<pair<int, int>,int> n2) {
+        return n1.second>n2.second;
+    }
+};
+
+// Class utilized by the priority queue to determine which item to pop
+class CompareDist2
+{
+public:
+    bool operator()(pair<pair<int, int>,int> n1,pair<pair<int, int>,int> n2) {
+        return n1.second<n2.second;
+    }
+};
+
+// KnightBoard class
+class KnightBoard
+{
+private:
+    
+public:
+    vector<string> board_state; // variable to store the board state
+    pair<int, int> board_size; // variable to store board size
+    pair<int, int> start; // variable to store the start position of the knight
+    pair<int, int> goal; //variable to store the goal position of the knight
+    pair<int, int> current; // variable to store the current position of the knight
+    vector<pair<int, int>> move_seqs;  // vector to store input move sequence
+    map<pair<int, int>, int> interest_coords; // map to store all interesting coordinates and the type. S/K: 1, E: 2, W: 3, R: 4, B: 5, T: 6, L: 7
+    map<int, int> interest_coords_cost; // map to store cost of every interesting coordinate
+    map<pair<int, int>, int> interest_coords_initial; // map to store all interesting coordinates and the type. S/K: 1, E: 2, W: 3, R: 4, B: 5, T: 6, L: 7
+    queue<pair<int, int>> q_bfs; // queue for bfs
+    stack<pair<int, int>> final_path; // stack to store the final path
+    map<pair<int, int>, pair<int, int>> parent; // map to store the parent of every node
+    set<pair<int, int>> visited; // set to track the visited nodes
+    priority_queue<pair<pair<int, int>, int>, vector<pair<pair<int, int>, int>>, CompareDist> q_astar; // priority queue for A*
+    map<pair<int, int>, int> g_val; // map to store the g-value of every node during A* search
+    
+    int myint(string str); // method to convert string to an integer, used mostly in parsing
+    void parse_row(string str, int row); // method to parse a row
+    void parse(char* input); // method to parse the input file
+    void print_state(int init); // method to print the current state of the board
+    string pair_to_string(pair<int, int> loc); // method to convert a pair to a string
+    pair<int, int> string_to_pair(string str); // method to convert a string to a pair
+    bool no_barrier(pair<int, int> current, pair<int, int> next); // method to check is a barrier is present in the current move
+    bool validMove(pair<int, int> current, pair<int, int> ms); // method to check the validity of the current move
+    bool level1_validMoves(vector<pair<int, int>> ms); // method for level 1, to determine if the input moves are valid or not
+    pair<int, int> pair_from_string(string str); // method to convert a string to a pair
+    int heu(pair<int, int> current, pair<int, int> ms); // method to generate heuristic value
+    void GenerateSuccesors(pair<int, int> loc, int level); // method to generate valid successors of the current state
+    void level2_computeValidMoves(); // method for level 2, to compute valid moves (BFS)
+    void level3_computeValidFewestMoves(); // method for level 3, to compute fewest moves (Dijkstra's)
+    void level4_computeValidFewestMoves(); // method for level 3, to compute fewest moves with more added constraints (A*)
+};
+
+// KnightBoard2 class
+class KnightBoard2 : public KnightBoard
+{
+private:
+
+public:
+    priority_queue<pair<pair<int, int>, int>, vector<pair<pair<int, int>, int>>, CompareDist2> q_astar;
+    void GenerateSuccesors(pair<int, int> loc, int level); // method to generate valid successors of the current state
+    void level5_computeLongestSequence(); // method for level 5, to compute longest sequence (A*)
+};
+
+//*****************************************************************
+// End of File
+//*****************************************************************

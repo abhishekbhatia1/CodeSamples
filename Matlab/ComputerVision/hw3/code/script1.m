@@ -1,0 +1,11 @@
+clear all;
+%load('../data/sylvseq.mat');
+load('../data/carseq.mat');
+%rect = [102; 62; 156; 108];
+rect = [60; 117; 146; 152];
+It = frames(:, :, 99);
+It1 = frames(:, :, 100);
+load('../data/sylvbases.mat');
+%[u,v] = LucasKanadeBasis(It, It1, rect,bases);
+[u,v] = LucasKanade(It, It1, rect);
+%M = LucasKanadeAffine(It, It1);

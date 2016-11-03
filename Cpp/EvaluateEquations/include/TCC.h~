@@ -1,0 +1,52 @@
+//*****************************************************************
+//  TCC.h
+//  Tesla Coding Challenge
+//
+//  Created by Abhishek Bhatia.
+//
+//  This header file contains the TCC class declaration.
+//*****************************************************************
+
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <map>
+#include <vector>
+using namespace std;
+
+//*****************************************************************
+// TCC Class
+//*****************************************************************
+class TCC
+{
+private:
+    
+public:
+    //stores a mapping of variable name with integer values
+    map <string, long long int> mp  ;
+
+    //vector that stores the graph
+    vector <long long int> v[100005];
+
+    //vector that stores if the child of the parent is a variable or an integer
+    vector <long long int> c[100005];
+
+    //stores the solution corresponding to the nodes
+    map <long long int, long long int> values;
+
+    //stores the count of variables on the lhs
+    long long int count = 0;
+
+    // function to parse the input string and extract relevant information
+    void parse(string str);
+
+    //recursive function for traversing the tree in a dfs manner
+    long long int rec(long long int node);
+
+    //typecast the input string to an integer
+    long long int mystring(string str);
+};
+
+//*****************************************************************
+// End of File
+//*****************************************************************
