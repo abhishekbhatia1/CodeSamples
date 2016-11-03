@@ -24,6 +24,6 @@
 
 5) Ros
 
-5.1) RosNetworking - simple experiment to setup ros networking such that ros nodes defined on multiple machines can interact with each other <br />
+5.1) RosNetworking - Simple experiment to setup ros networking such that ros nodes defined on multiple machines can interact with each other <br />
 5.2) AmazonPickingChallenge - some code snippets from the work I did for Amazon Picking challenge, including global prediction algorithm for stowage identification <br /> 
 
