@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-project( Cruise_Technical_Challenge )
+project( C_T_C )
 
 include_directories(include)
 

@@ -1,0 +1,5 @@
+<launch>
+    <env name="GSCAM_CONFIG" value="v4l2src device=/dev/video0 ! video/x-raw-yuv,framerate=30/1,width=640,height=480 ! ffmpegcolorspace " /> 
+	<node name="gscam" pkg="gscam" type="gscam" />
+	<node name="image_converter" pkg="ros_assignment" type = "image_converter" />
+</launch>

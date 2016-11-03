@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-project( Tesla_Coding_Challenge )
+project( T_C_C )
 
 include_directories(include)
 
